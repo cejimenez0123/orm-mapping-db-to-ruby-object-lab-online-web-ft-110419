@@ -22,7 +22,7 @@ class Student
   end
 
   def self.find_by_name(name)
-    sql= <<-SQL SELECT * FROM students WHERE students.name = name 
+    sql= <<-SQL SELECT * FROM students WHERE students.name = name LIMIT 1
     SQL
     DB[:conn].execute(sql)
     # find the student in the database given a name
